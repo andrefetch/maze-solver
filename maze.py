@@ -1,8 +1,7 @@
 import random
 import time
 
-from cell import Cell
-from window import Window
+from graphics import Cell, Window
 
 
 class Maze:

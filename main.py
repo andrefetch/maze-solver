@@ -1,5 +1,5 @@
+from graphics import Window
 from maze import Maze
-from window import Window
 
 def main() -> None:
 
