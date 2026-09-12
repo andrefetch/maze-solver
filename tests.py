@@ -29,15 +29,15 @@ class Tests(unittest.TestCase):
             False,
         )
 
-    def test_maze_break_walls_r_visits_every_cell(self):
+    def test_maze_reset_cells_visited(self):
         num_cols = 12
         num_rows = 10
         m1 = Maze(0, 0, num_rows, num_cols, 10, 10)
         for i in range(num_cols):
             for j in range(num_rows):
-                self.assertTrue(
+                self.assertFalse(
                     m1._Maze__cells[i][j].visited,
-                    f"cell ({i}, {j}) was never visited",
+                    f"cell ({i}, {j}) was not reset",
                 )
 
 if __name__ == "__main__":

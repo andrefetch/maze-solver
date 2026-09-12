@@ -37,6 +37,7 @@ class Maze:
             random.seed(seed)
 
         self.__break_walls_r(0, 0)
+        self.__reset_cells_visited()
 
     def __create_cells(self):
 
@@ -126,3 +127,11 @@ class Maze:
                 self.__cells[next_i][next_j].has_bottom_wall = False
 
             self.__break_walls_r(next_i, next_j)
+
+    def __reset_cells_visited(self):
+
+        for i in range(self.num_cols):
+
+            for j in range(self.num_rows):
+
+                self.__cells[i][j].visited = False
