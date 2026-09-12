@@ -2,6 +2,8 @@
 
 A Tkinter maze generator and DFS solver, written for the [Boot.dev](https://www.boot.dev) "Build a Maze Solver" project.
 
+![Maze Solver demo](assets/example.gif)
+
 ## Usage
 
 ```bash
