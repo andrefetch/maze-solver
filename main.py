@@ -1,7 +1,9 @@
 from tkinter import Tk, BOTH, Canvas
 
 class Window:
+
     def __init__(self, width: int, height: int) -> None:
+
         self.width = width
         self.height = height
         self.__root = Tk()
@@ -11,32 +13,41 @@ class Window:
         self.running = False
 
     def draw_line(self, line, fill_color) -> None:
+
         line.draw(self.__canvas, fill_color=fill_color)
 
     def redraw(self) -> None:
+
         self.__root.update_idletasks()
         self.__root.update()
 
     def wait_for_close(self) -> None:
+
         self.running = True
         while self.running:
             self.redraw()
 
     def close(self) -> None:
+
         self.running = False
         self.__root.protocol("WM_DELETE_WINDOW", self.close)
 
 class Point:
+
     def __init__(self, x: float, y: float) -> None:
+
         self.x = x;
         self.y = y;
 
 class Line:
+
     def __init__(self, point_one: float | int, point_two: float | int) -> None:
+
         self.point_one = point_one
         self.point_two = point_two
 
     def draw(self, canvas, fill_color):
+
         canvas.create_line(
             self.point_one.x, 
             self.point_one.y, 
@@ -49,6 +60,7 @@ class Line:
 class Cell():
 
     def __init__(self, win: Window):
+
         self.__win = win
         self.has_left_wall = True
         self.has_right_wall = True
@@ -99,11 +111,40 @@ class Cell():
 
             self.__win.draw_line(line, "black")
 
+    def draw_move(self, to_cell: "Cell", undo: bool = False) -> None:
+
+        from_center = Point(
+            (self.__x1 + self.__x2) / 2,
+            (self.__y1 + self.__y2) / 2,
+        )
+
+        to_center = Point(
+            (to_cell.__x1 + to_cell.__x2) / 2,
+            (to_cell.__y1 + to_cell.__y2) / 2,
+        )
+
+        line = Line(
+            to_center,
+            from_center
+        )
+
+        if not undo:
+            self.__win.draw_line(line, "red")
+        else:
+            self.__win.draw_line(line, "grey")
 
 def main() -> None:
+
     win = Window(800, 200)
-    cell = Cell(win)
-    cell.draw(20, 20)
+
+    cell_a = Cell(win)
+    cell_a.draw(20, 20)
+
+    cell_b = Cell(win)
+    cell_b.draw(200, 50)
+
+    cell_a.draw_move(cell_b, undo=False)
+
     win.wait_for_close()
 
 if __name__ == "__main__":
