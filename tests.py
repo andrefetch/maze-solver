@@ -40,5 +40,14 @@ class Tests(unittest.TestCase):
                     f"cell ({i}, {j}) was not reset",
                 )
 
+    def test_maze_solve(self):
+        num_cols = 12
+        num_rows = 10
+        m1 = Maze(0, 0, num_rows, num_cols, 10, 10)
+        self.assertTrue(
+            m1.solve(),
+            "maze should be solvable",
+        )
+
 if __name__ == "__main__":
     unittest.main()

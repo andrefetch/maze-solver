@@ -15,6 +15,8 @@ def main() -> None:
         win=win,
     )
 
+    maze.solve()
+
     win.wait_for_close()
 
 if __name__ == "__main__":
