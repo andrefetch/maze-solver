@@ -18,6 +18,8 @@ class Cell:
         self.__y1 = -1.0
         self.__y2 = -1.0
 
+        self.visited = False
+
     def draw(
             self,
             x1: float | int,
@@ -48,7 +50,7 @@ class Cell:
                 Point(self.__x1, self.__y2)
             )
             
-            self.__win.draw_line(line, "white")
+            self.__win.draw_line(line, "#d9d9d9")
 
         if self.has_top_wall:
             line = Line(
@@ -64,7 +66,7 @@ class Cell:
                 Point(self.__x2, self.__y1)
             )
         
-            self.__win.draw_line(line, "white")
+            self.__win.draw_line(line, "#d9d9d9")
 
         if self.has_right_wall:
             line = Line(
@@ -80,7 +82,7 @@ class Cell:
                 Point(self.__x2, self.__y2)
             )
                 
-            self.__win.draw_line(line, "white")
+            self.__win.draw_line(line, "#d9d9d9")
 
         if self.has_bottom_wall:
             line = Line(
@@ -96,7 +98,7 @@ class Cell:
                 Point(self.__x2, self.__y2)
             )
         
-            self.__win.draw_line(line, "white")
+            self.__win.draw_line(line, "#d9d9d9")
 
     def draw_move(self, to_cell: "Cell", undo: bool = False) -> None:
 
