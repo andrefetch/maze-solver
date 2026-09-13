@@ -1,6 +1,6 @@
 # Maze Solver
 
-A Tkinter maze generator and DFS solver, written for the [Boot.dev](https://www.boot.dev) "Build a Maze Solver" project.
+A Tkinter maze generator and DFS solver, written in Python using the object-oriented programming paradigm.
 
 ![Maze Solver demo](assets/example.gif)
 
