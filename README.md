@@ -2,7 +2,7 @@
 
 A Tkinter maze generator and DFS solver, written in Python using the object-oriented programming paradigm.
 
-![Maze Solver demo](assets/example.gif)
+![Maze Solver demo](assets/example2.gif)
 
 ## Usage
 

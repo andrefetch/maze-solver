@@ -8,8 +8,8 @@ def main() -> None:
     maze = Maze(
         x1=20,
         y1=30,
-        num_rows=12,
-        num_cols=24,
+        num_rows=20,
+        num_cols=37,
         cell_size_x=50,
         cell_size_y=50,
         win=win,

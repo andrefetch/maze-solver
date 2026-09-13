@@ -38,7 +38,7 @@ class Maze:
         self.__break_walls_r(0, 0)
         self.__reset_cells_visited()
 
-    def __create_cells(self):
+    def __create_cells(self) -> None:
 
         for i in range(self.num_cols):
 
@@ -68,13 +68,13 @@ class Maze:
         self.__cells[i][j].draw(x1, y1, x2, y2)
         self.__animate()
 
-    def __animate(self):
+    def __animate(self) -> None:
         if self.win is None:
             return
         self.win.redraw()
-        time.sleep(0.025)
+        time.sleep(0.015)
 
-    def __break_entrance_and_exit(self):
+    def __break_entrance_and_exit(self) -> None:
 
         self.__cells[0][0].has_top_wall = False
         self.__draw_cell(0, 0)
@@ -127,7 +127,7 @@ class Maze:
 
             self.__break_walls_r(next_i, next_j)
 
-    def __reset_cells_visited(self):
+    def __reset_cells_visited(self) -> None:
 
         for i in range(self.num_cols):
 
@@ -135,11 +135,11 @@ class Maze:
 
                 self.__cells[i][j].visited = False
 
-    def solve(self) -> bool:
+    def solve(self) -> None:
 
         return self.__solve_r(0, 0)
 
-    def __solve_r(self, i: int, j: int) -> bool:
+    def __solve_r(self, i: int, j: int) -> None:
 
         self.__animate()
 

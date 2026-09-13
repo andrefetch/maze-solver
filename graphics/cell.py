@@ -2,7 +2,6 @@ from graphics.line import Line
 from graphics.point import Point
 from graphics.window import Window
 
-
 class Cell:
 
     def __init__(self, win: Window = None) -> None:
@@ -21,12 +20,14 @@ class Cell:
         self.visited = False
 
     def draw(
+            
             self,
             x1: float | int,
             y1: float | int,
             x2: float | int,
             y2: float | int,
-        ):
+
+        ) -> None:
 
         self.__x1 = x1
         self.__y1 = y1

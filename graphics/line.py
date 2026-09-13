@@ -5,7 +5,7 @@ class Line:
         self.point_one = point_one
         self.point_two = point_two
 
-    def draw(self, canvas, fill_color):
+    def draw(self, canvas, fill_color) -> None:
 
         canvas.create_line(
             self.point_one.x,
