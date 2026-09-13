@@ -18,5 +18,5 @@ python -m unittest discover -s tests -v
 
 ## Roadmap
 - [x] Basic Functioanlity
-- [] BFS Alogrithm
-- [] A* Search
+- [ ] BFS Alogrithm
+- [ ] A* Search
